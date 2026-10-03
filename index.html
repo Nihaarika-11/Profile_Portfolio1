@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Nihaarika RD - Electrical Instrumentation & Control Engineering Portfolio">
+<title>NIHAARIKA RD | AI × INSTRUMENTATION</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #030712;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ================= BACKGROUND ================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(0, 255, 255, .10), transparent 25%),
+        radial-gradient(circle at 85% 70%, rgba(130, 70, 255, .12), transparent 28%),
+        radial-gradient(circle at 50% 50%, rgba(0, 100, 255, .06), transparent 40%);
+    pointer-events: none;
+    z-index: -3;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1px),
+        radial-gradient(circle, rgba(100,220,255,.5) 1px, transparent 1px);
+    background-size: 90px 90px, 140px 140px;
+    background-position: 0 0, 40px 60px;
+    animation: starsMove 30s linear infinite;
+    opacity: .35;
+}
+
+@keyframes starsMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(90px); }
+}
+
+/* ================= NAVBAR ================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(3,7,18,.72);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #00f5ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #b9c4d8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #00f5ff;
+}
+/* ================= GENERAL ================= */
+
+section {
+    padding: 110px 8%;
+    position: relative;
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    font-size: clamp(28px, 4vw, 45px);
+    margin-bottom: 55px;
+}
+
+.section-title span {
+    color: #00f5ff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 50px;
+    padding-top: 130px;
+}
+
+.hero-small {
+    color: #00f5ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(38px, 6vw, 78px);
+    line-height: 1.05;
+    letter-spacing: 2px;
+}
+
+.hero h1 span {
+    color: #00f5ff;
+    text-shadow: 0 0 30px rgba(0,245,255,.35);
+}
+
+.hero h2 {
+    margin-top: 20px;
+    font-size: clamp(18px, 2vw, 25px);
+    color: #b7c4d9;
+    font-weight: 500;
+}
+
+.hero p {
+    max-width: 650px;
+    margin-top: 22px;
+    line-height: 1.8;
+    color: #8998b0;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 32px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .3s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #00e5ff;
+    color: #021018;
+    box-shadow: 0 0 25px rgba(0,229,255,.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 40px rgba(0,229,255,.45);
+}
+
+.btn-outline {
+    border: 1px solid rgba(0,245,255,.5);
+    color: #00f5ff;
+}
+
+.btn-outline:hover {
+    background: rgba(0,245,255,.08);
+    transform: translateY(-3px);
+}
+
+/* ================= AI CORE ================= */
+
+.ai-core {
+    width: min(380px, 80vw);
+    height: min(380px, 80vw);
+    margin: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.core-ring {
+    position: absolute;
+    border: 1px solid rgba(0,245,255,.45);
+    border-radius: 50%;
+    animation: rotate 12s linear infinite;
+}
+
+.ring1 {
+    width: 100%;
+    height: 100%;
+}
+
+.ring2 {
+    width: 78%;
+    height: 78%;
+    border-color: rgba(140,90,255,.45);
+    animation-duration: 9s;
+    animation-direction: reverse;
+}
+
+.ring3 {
+    width: 55%;
+    height: 55%;
+    border-color: rgba(0,245,255,.65);
+    animation-duration: 6s;
+}
+
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+.core {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, #d8ffff 0%, #00e5ff 15%, #006aff 50%, #3510a0 75%, transparent 76%);
+    box-shadow:
+        0 0 35px #00e5ff,
+        0 0 80px rgba(0,100,255,.6);
+    animation: pulseCore 2.2s ease-in-out infinite;
+}
+
+@keyframes pulseCore {
+    0%,100% { transform: scale(.9); }
+    50% { transform: scale(1.08); }
+}
+
+.orbit-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #00f5ff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #00f5ff;
+}
+
+.dot1 {
+    top: 0;
+    left: 50%;
+    animation: orbit1 5s linear infinite;
+}
+
+.dot2 {
+    right: 5%;
+    top: 45%;
+    background: #9b6cff;
+    box-shadow: 0 0 15px #9b6cff;
+    animation: orbit2 7s linear infinite;
+}
+
+@keyframes orbit1 {
+    to { transform: rotate(360deg) translateX(185px) rotate(-360deg); }
+}
+
+@keyframes orbit2 {
+    to { transform: rotate(-360deg) translateY(170px) rotate(360deg); }
+}
+
+/* ================= CARDS ================= */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,.09);
+    background: linear-gradient(145deg, rgba(15,25,45,.8), rgba(6,12,25,.75));
+    border-radius: 16px;
+    transition: .35s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #00f5ff;
+    filter: blur(70px);
+    opacity: 0;
+    transition: .35s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0,245,255,.4);
+    box-shadow: 0 15px 40px rgba(0,0,0,.3);
+}
+
+.card:hover::before {
+    opacity: .12;
+}
+
+.card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #91a0b7;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* ================= SKILLS ================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.skill {
+    padding: 25px 18px;
+    text-align: center;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.08);
+    background: rgba(10,18,35,.7);
+    transition: .3s;
+}
+
+.skill:hover {
+    transform: translateY(-7px) scale(1.02);
+    border-color: #00e5ff;
+}
+
+.skill-icon {
+    font-size: 35px;
+    margin-bottom: 14px;
+    display: inline-block;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+.skill:nth-child(2) .skill-icon { animation-delay: .4s; }
+.skill:nth-child(3) .skill-icon { animation-delay: .8s; }
+.skill:nth-child(4) .skill-icon { animation-delay: 1.2s; }
+
+@keyframes floatIcon {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.skill h4 {
+    font-size: 14px;
+    color: #dce8f8;
+}
+/* ================= I-GAARD ================= */
+
+.igaard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.project-main {
+    border: 1px solid rgba(0,245,255,.2);
+    border-radius: 20px;
+    padding: 35px;
+    background: linear-gradient(145deg, rgba(0,40,60,.3), rgba(20,10,50,.3));
+}
+
+.project-main h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00f5ff;
+    font-size: 26px;
+    margin-bottom: 18px;
+}
+
+.project-main p {
+    color: #a4b0c2;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.project-list {
+    list-style: none;
+}
+
+.project-list li {
+    padding: 8px 0;
+    color: #c6d1df;
+}
+
+.project-list li::before {
+    content: "◈";
+    color: #00f5ff;
+    margin-right: 10px;
+}
+
+.geofence {
+    height: 390px;
+    border-radius: 22px;
+    border: 1px solid rgba(0,245,255,.25);
+    background:
+        linear-gradient(rgba(0,245,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,245,255,.06) 1px, transparent 1px),
+        #07101e;
+    background-size: 35px 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+.geo-circle {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border: 2px dashed rgba(0,245,255,.5);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    animation: geoPulse 3s ease-in-out infinite;
+}
+
+@keyframes geoPulse {
+    0%,100% { transform: translate(-50%,-50%) scale(.9); opacity: .6; }
+    50% { transform: translate(-50%,-50%) scale(1.08); opacity: 1; }
+}
+
+.animal {
+    position: absolute;
+    font-size: 38px;
+    left: 15%;
+    top: 20%;
+    animation: animalMove 5s linear infinite;
+}
+
+@keyframes animalMove {
+    0% { left: 10%; top: 20%; }
+    45% { left: 58%; top: 45%; }
+    70% { left: 75%; top: 70%; }
+    100% { left: 10%; top: 20%; }
+}
+
+.radar {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00f5ff, transparent);
+    top: 50%;
+    left: 0;
+    box-shadow: 0 0 15px #00f5ff;
+    animation: radar 2.5s linear infinite;
+}
+
+@keyframes radar {
+    0% { transform: translateY(-180px); opacity: 0; }
+    30% { opacity: 1; }
+    100% { transform: translateY(180px); opacity: 0; }
+}
+
+.alert {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 10px 14px;
+    border: 1px solid #ff4d6d;
+    border-radius: 8px;
+    color: #ff718a;
+    background: rgba(255,40,80,.08);
+    font-size: 12px;
+    animation: alertBlink 1.2s infinite;
+}
+
+@keyframes alertBlink {
+    50% { opacity: .35; }
+}
+
+/* ================= INTERNSHIPS ================= */
+
+.timeline {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(#00f5ff, #7d4cff, transparent);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 65px;
+    margin-bottom: 35px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    background: #00f5ff;
+    border-radius: 50%;
+    box-shadow: 0 0 18px #00f5ff;
+}
+
+.timeline-content {
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(12,20,38,.75);
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.timeline-content h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00f5ff;
+    margin-bottom: 8px;
+}
+
+.timeline-content h4 {
+    color: #dce5f2;
+    margin-bottom: 12px;
+}
+
+.timeline-content p {
+    color: #95a3b8;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* ================= EDUCATION ================= */
+
+.education {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.edu-card {
+    padding: 28px;
+    border-radius: 15px;
+    background: rgba(12,20,38,.75);
+    border: 1px solid rgba(255,255,255,.08);
+    text-align: center;
+}
+
+.edu-card h3 {
+    color: #00f5ff;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 12px;
+}
+
+.edu-card p {
+    color: #98a6bb;
+    line-height: 1.6;
+}
+
+.score {
+    margin-top: 15px;
+    font-size: 27px;
+    font-weight: 800;
+    color: white;
+}
+
+/* ================= HOBBIES ================= */
+
+.hobby-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.hobby {
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 18px;
+    background: rgba(12,20,38,.75);
+    border: 1px solid rgba(255,255,255,.08);
+    transition: .3s;
+    animation: hobbyFloat 4s ease-in-out infinite;
+}
+
+.hobby:nth-child(2) { animation-delay: .7s; }
+.hobby:nth-child(3) { animation-delay: 1.4s; }
+
+.hobby:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0,245,255,.4);
+}
+
+.hobby-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+@keyframes hobbyFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+}
+
+.hobby h3 {
+    font-size: 17px;
+}
+/* ================= STRENGTHS ================= */
+
+.strengths {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.strength {
+    text-align: center;
+    padding: 25px 12px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,.08);
+    background: rgba(10,18,35,.7);
+    animation: strengthGlow 3s ease-in-out infinite;
+}
+
+.strength:nth-child(2) { animation-delay: .4s; }
+.strength:nth-child(3) { animation-delay: .8s; }
+.strength:nth-child(4) { animation-delay: 1.2s; }
+.strength:nth-child(5) { animation-delay: 1.6s; }
+
+.strength-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+@keyframes strengthGlow {
+    0%,100% {
+        transform: translateY(0);
+        box-shadow: 0 0 0 rgba(0,245,255,0);
+    }
+    50% {
+        transform: translateY(-5px);
+        box-shadow: 0 0 25px rgba(0,245,255,.08);
+    }
+}
+
+/* ================= LANGUAGES ================= */
+
+.languages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.language {
+    padding: 13px 23px;
+    border-radius: 50px;
+    border: 1px solid rgba(0,245,255,.25);
+    color: #d6e1ef;
+    background: rgba(0,245,255,.04);
+}
+
+/* ================= ACHIEVEMENTS ================= */
+
+.achievement {
+    max-width: 850px;
+    margin: auto;
+    padding: 35px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid rgba(255,215,0,.18);
+    background: linear-gradient(145deg, rgba(50,40,10,.25), rgba(10,20,35,.5));
+}
+
+.trophy {
+    font-size: 55px;
+    margin-bottom: 15px;
+    animation: trophyFloat 2s ease-in-out infinite;
+}
+
+@keyframes trophyFloat {
+    50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+.achievement h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffe27a;
+    margin-bottom: 12px;
+}
+
+.achievement p {
+    color: #9daabd;
+    line-height: 1.7;
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #96a4b8;
+    line-height: 1.7;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid rgba(255,255,255,.08);
+    color: #68768c;
+    font-size: 13px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 900px) {
+
+    .hero,
+    .igaard {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .card-grid,
+    .education {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .strengths {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hobby-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-core {
+        margin-top: 30px;
+    }
+}
+
+@media(max-width: 600px) {
+
+    nav {
+        padding: 16px 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    section {
+        padding: 80px 5%;
+    }
+
+    .card-grid,
+    .education,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .strengths {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .project-main {
+        padding: 25px;
+    }
+
+    .geofence {
+        height: 300px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+    <div class="logo">NIHAARIKA<span>RD</span></div>
+
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#internships">Internships</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero container" id="about">
+
+    <div>
+
+        <div class="hero-small">
+            ELECTRICAL INSTRUMENTATION & CONTROL ENGINEERING
+        </div>
+
+        <h1>
+            <span>NIHAARIKA RD</span>
+        </h1>
+
+        <h2>
+            AI • SOFTWARE • INSTRUMENTATION
+        </h2>
+
+        <p>
+            Third-year B.E. Electrical Instrumentation & Control Engineering
+            student passionate about AI/ML, software development, industrial
+            automation and intelligent systems.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+                VIEW PROJECTS
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                CONTACT ME
+            </a>
+        </div>
+
+    </div>
+
+    <div class="ai-core">
+
+        <div class="core-ring ring1"></div>
+        <div class="core-ring ring2"></div>
+        <div class="core-ring ring3"></div>
+
+        <div class="orbit-dot dot1"></div>
+        <div class="orbit-dot dot2"></div>
+
+        <div class="core"></div>
+
+    </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+ABOUT <span>ME</span>
+</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>🎓 Education</h3>
+<p>
+B.E. Electrical Instrumentation & Control Engineering student with a
+strong foundation in instrumentation, control systems, programming and
+digital systems.
+</p>
+</div>
+
+<div class="card">
+<h3>🤖 AI / ML</h3>
+<p>
+Currently developing knowledge in Artificial Intelligence and Machine
+Learning with an interest in computer vision, detection systems and
+intelligent automation.
+</p>
+</div>
+
+<div class="card">
+<h3>⚙️ Engineering</h3>
+<p>
+Interested in combining software, sensors, instrumentation and automation
+to create practical real-world solutions.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title">
+TECHNICAL <span>SKILLS</span>
+</h2>
+
+<div class="skills-grid">
+
+<div class="skill">
+<div class="skill-icon">🐍</div>
+<h4>Python</h4>
+</div>
+
+<div class="skill">
+<div class="skill-icon">☕</div>
+<h4>Java</h4>
+</div>
+
+<div class="skill">
+<div class="skill-icon">💻</div>
+<h4>C</h4>
+</div>
+
+<div class="skill">
+<div class="skill-icon">📊</div>
+<h4>Power BI</h4>
+</div>
+
+<div class="skill">
+<div class="skill-icon">📈</div>
+<h4>Excel</h4>
+</div>
+
+<div class="skill">
+<div class="skill-icon">🤖</div>
+<h4>AI / ML</h4>
+</div>
+
+<div class="skill">
+<div class="skill-icon">⚙️</div>
+<h4>Industrial Instrumentation</h4>
+</div>
+
+<div class="skill">
+<div class="skill-icon">🔧</div>
+<h4>Control Systems</h4>
+</div>
+
+<div class="skill">
+<div class="skill-icon">🔌</div>
+<h4>Arduino</h4>
+</div>
+
+<div class="skill">
+<div class="skill-icon">📡</div>
+<h4>Sensors</h4>
+</div>
+
+<div class="skill">
+<div class="skill-icon">🧩</div>
+<h4>Digital Systems</h4>
+</div>
+
+<div class="skill">
+<div class="skill-icon">🐙</div>
+<h4>GitHub</h4>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= PROJECT ================= -->
+
+<section id="projects">
+
+<div class="container">
+
+<h2 class="section-title">
+FEATURED <span>PROJECT</span>
+</h2>
+
+<div class="igaard">
+
+<div class="project-main">
+
+<h3>I-GAARD</h3>
+
+<p>
+<strong>
+Intelligent AI-Driven Geofence Animal Detection & Real-Time Alert System
+</strong>
+</p>
+
+<p>
+An intelligent wildlife safety and sustainability solution combining
+AI camera monitoring, IoT sensors, geofencing and LoRaWAN communication
+to detect animals and generate real-time alerts.
+</p>
+
+<ul class="project-list">
+
+<li>AI-based animal detection</li>
+<li>IoT sensor integration</li>
+<li>Geofencing technology</li>
+<li>LoRaWAN communication</li>
+<li>Real-time alert system</li>
+<li>Wildlife safety and sustainability</li>
+
+</ul>
+
+</div>
+
+<div class="geofence">
+
+<div class="geo-circle"></div>
+
+<div class="radar"></div>
+
+<div class="animal">🦌</div>
+
+<div class="alert">
+⚠ ANIMAL DETECTED
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= OTHER PROJECTS ================= -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+OTHER <span>PROJECTS</span>
+</h2>
+
+<div class="card-grid">
+
+<div class="card">
+
+<h3>🏥 Hospital Management Software</h3>
+
+<p>
+Developed a Python-based hospital management software concept for
+managing patient information and basic hospital operations.
+</p>
+
+<p style="margin-top:12px;">
+<strong>Tools:</strong> Python, Tinkercad
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📊 Data Analytics</h3>
+
+<p>
+Developing practical knowledge in data analytics using Python and
+exploring data-driven approaches to engineering problems.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🧠 AI / ML Learning</h3>
+
+<p>
+Currently expanding knowledge in Artificial Intelligence and Machine
+Learning, including computer vision and object detection concepts.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= INTERNSHIPS ================= -->
+
+<section id="internships">
+
+<div class="container">
+
+<h2 class="section-title">
+INTERNSHIP <span>EXPERIENCE</span>
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h3>FUJI ELECTRIC PRIVATE LIMITED</h3>
+
+<h4>Industrial Automation & Manufacturing Internship</h4>
+
+<p>
+Completed an internship at Fuji Electric, gaining practical exposure
+to industrial automation, electrical systems, and manufacturing processes.
+Developed an understanding of industrial operations, technical workflows,
+quality control, and workplace safety while strengthening problem-solving,
+teamwork, and technical skills through hands-on learning.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h3>SYRMA SGS TECHNOLOGY LIMITED</h3>
+
+<h4>15-Day Electronics Manufacturing Internship</h4>
+
+<p>
+Completed a 15-day internship at Syrma SGS Technology Limited, gaining
+practical exposure to electronics manufacturing, PCB assembly, production
+processes, and quality control. Developed an understanding of industrial
+workflows, electronic components, testing procedures, and manufacturing
+operations while enhancing technical knowledge, teamwork, and
+problem-solving skills through hands-on learning.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+<div class="container">
+
+<h2 class="section-title">
+EDUCATION <span>& QUALIFICATIONS</span>
+</h2>
+
+<div class="education">
+
+<div class="edu-card">
+
+<h3>B.E.</h3>
+
+<p>
+Electrical Instrumentation & Control Engineering
+</p>
+
+<p>
+Third Year
+</p>
+
+<div class="score">
+CGPA 8.54
+</div>
+
+<div style="color:#8796aa;margin-top:7px;">
+PGPA 7.65
+</div>
+
+</div>
+
+
+<div class="edu-card">
+
+<h3>CLASS XII</h3>
+
+<p>
+Higher Secondary Education
+</p>
+
+<div class="score">
+89%
+</div>
+
+</div>
+
+
+<div class="edu-card">
+
+<h3>CLASS X</h3>
+
+<p>
+Secondary Education
+</p>
+
+<div class="score">
+94.6%
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= NPTEL ================= -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+COURSES & <span>LEARNING</span>
+</h2>
+
+<div class="card-grid">
+
+<div class="card">
+
+<h3>🐍 The Joy of Computing using Python</h3>
+
+<p>
+NPTEL course focused on Python programming and computational thinking.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>📊 Data Analytics with Python</h3>
+
+<p>
+NPTEL course focused on data analysis concepts and Python-based
+analytics.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🌍 UN Sustainable Development Goals</h3>
+
+<p>
+NPTEL learning focused on sustainability and global development goals.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= HOBBIES ================= -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+PERSONAL <span>INTERESTS</span>
+</h2>
+
+<div class="hobby-grid">
+
+<div class="hobby">
+
+<div class="hobby-icon">✈️</div>
+
+<h3>Travelling</h3>
+
+</div>
+
+<div class="hobby">
+
+<div class="hobby-icon">🏛️</div>
+
+<h3>Historical Stories</h3>
+
+</div>
+
+<div class="hobby">
+
+<div class="hobby-icon">🌏</div>
+
+<h3>Exploring Cultures</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= LANGUAGES ================= -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+LANGUAGE <span>SKILLS</span>
+</h2>
+
+<div class="languages">
+
+<div class="language">
+English
+</div>
+
+<div class="language">
+ಕನ್ನಡ
+</div>
+
+<div class="language">
+हिन्दी
+</div>
+
+<div class="language">
+தமிழ்
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= STRENGTHS ================= -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+CORE <span>STRENGTHS</span>
+</h2>
+
+<div class="strengths">
+
+<div class="strength">
+
+<div class="strength-icon">💬</div>
+
+<p>Communication</p>
+
+</div>
+
+<div class="strength">
+
+<div class="strength-icon">⚡</div>
+
+<p>Quick Learner</p>
+
+</div>
+
+<div class="strength">
+
+<div class="strength-icon">🤝</div>
+
+<p>Teamwork</p>
+
+</div>
+
+<div class="strength">
+
+<div class="strength-icon">🧩</div>
+
+<p>Problem Solving</p>
+
+</div>
+
+<div class="strength">
+
+<div class="strength-icon">⏱️</div>
+
+<p>Time Management</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ACHIEVEMENTS ================= -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+ACHIEVEMENTS
+</h2>
+
+<div class="achievement">
+
+<div class="trophy">🏆</div>
+
+<h3>Overall Champion – Play with Words</h3>
+
+<p>
+Won the overall championship in the “Play with Words” speech competition,
+along with prizes in sports activities.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="container contact">
+
+<h2 class="section-title">
+LET'S <span>CONNECT</span>
+</h2>
+
+<p>
+Interested in AI, software development, industrial automation and
+intelligent engineering systems. Feel free to connect with me.
+</p>
+
+<div class="contact-links">
+
+<a
+href="mailto:sec24ic023@sairamtap.edu.in"
+class="btn btn-primary">
+📧 EMAIL
+</a>
+
+<a
+href="https:www.linkedin.com/in/nihaarika-rd "
+target="_blank"
+class="btn btn-outline">
+💼 LINKEDIN
+</a>
+
+<a
+href="https://github.com/Nihaarika-11"
+target="_blank"
+class="btn btn-outline">
+🐙 GITHUB
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+© 2026 NIHAARIKA RD • AI × INSTRUMENTATION
+
+</footer>
+
+</body>
+</html>
